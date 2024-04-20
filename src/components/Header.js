@@ -10,20 +10,37 @@ const Header = () => {
         dispatch(logout())
     }
 
-    return ( isLoggedIn ?
-        <header>
-            <nav>
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/create-poll">Create Poll</Link></li>
-                    <li><Link to="/leaderboard">Leaderboard</Link></li>
-                </ul>
-            </nav>
-            <div className="logout-box">
-                {isLoggedIn && <button onClick={(handleLogout)}>Logout</button>}
+    const handlerLoginBox = () => {
+        console.log("open login box!");
+    }
+
+    return (
+        <header className="header">
+            <div className="header-left">
+                <div className="logo-app">
+                    <Link to="/">
+                        <img src="/polls-logo.png" alt="Logo" />
+                    </Link>
+                </div>
+                {isLoggedIn && <nav className="nav">
+                    <ul>
+                        <li><Link to="/leaderboard">Leaderboard</Link></li>
+                        <li><Link to="/add">New</Link></li>
+                    </ul>
+                </nav>}
+            </div>
+            <div className='header-right'>
+                {isLoggedIn &&
+                    <div onClick={handleLogout}>
+                        <img src="/logout-logo.png" alt="Logo" />
+                    </div>}
+                {!isLoggedIn &&
+                    <div onClick={handlerLoginBox} className='login-box'>
+                        <img src="/login-logo.png" alt="Logo" />
+                    </div>
+                }
             </div>
         </header>
-        : null
     )
 }
 

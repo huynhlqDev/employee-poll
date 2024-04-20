@@ -13,7 +13,6 @@ const PollList = () => {
     }, [dispatch]);
 
     return (
-
         <div>
             <ul>
                 {polls.map(poll => (

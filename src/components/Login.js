@@ -35,8 +35,8 @@ const Login = () => {
     return (
         <div>
             <h1>Employee Polls</h1>
-            <img
-                src="./login-logo.jpeg"
+            <img className='login-logo'
+                src="./login-logo.png"
                 alt={"logo"}
             />
             <div>

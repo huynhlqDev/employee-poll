@@ -73,3 +73,64 @@
   background-color: #d8d3d3;
   cursor: not-allowed;
 }
+
+/* Header.css */
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.header-right {
+  padding-right: 20px;
+}
+
+.logo-app img {
+  height: 50px;
+}
+
+.header-right img {
+  height: 30px;
+  cursor: pointer;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav ul li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.nav ul li:first-child {
+  margin-left: 20;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.nav ul li a:hover {
+  color: #9a3397;
+}
+
+
+.login-logo {
+  height: 300px;
+}
