@@ -1,17 +1,33 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { logout } from '../actions/authenActions';
+import { login, logout } from '../actions/authenActions';
+import { _getExistingUsers } from '../data/existingUsers';
+import UserDropdown from './UserDropdown';
+import { useEffect, useState } from 'react';
 
 const Header = () => {
+
     const dispatch = useDispatch();
     const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
+    const loginInfo = useSelector(state => state.auth.loginInfo);
+
+    const [showUserDropdown, setShowUserDropdown] = useState(false)
+
+    useEffect(() => {
+        setShowUserDropdown(false)
+    }, [isLoggedIn])
 
     const handleLogout = () => {
-        dispatch(logout())
+        dispatch(logout(loginInfo.id))
     }
 
     const handlerLoginBox = () => {
-        console.log("open login box!");
+        setShowUserDropdown(!showUserDropdown)
+    }
+
+    const handleOnSelectUser = (user) => {
+        setShowUserDropdown(false)
+        dispatch(login(user.id, user.password))
     }
 
     return (
@@ -39,7 +55,10 @@ const Header = () => {
                         <img src="/login-logo.png" alt="Logo" />
                     </div>
                 }
+
             </div>
+            {showUserDropdown &&
+                <UserDropdown users={_getExistingUsers()} handleOnSelectUser={handleOnSelectUser} />}
         </header>
     )
 }

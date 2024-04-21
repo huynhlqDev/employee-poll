@@ -134,3 +134,11 @@
 .login-logo {
   height: 300px;
 }
+
+/* UserDropdown.css */
+.user-dropdown {
+  position: absolute;
+  top: 100%; /* Đặt dropdown ở dưới header */
+  right: 0; /* Đặt dropdown ở bên phải */
+  margin-top: 10px; /* Khoảng cách giữa dropdown và header */
+}
