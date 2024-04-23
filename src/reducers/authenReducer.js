@@ -1,4 +1,7 @@
-import { _removeLoginUser, _saveLoginUser } from "../data/existingUsers";
+import {
+    // _removeLoginUser,
+    _saveLoginUser
+} from "../data/existingUsers";
 
 const initialState = {
     isLoggedIn: false,
@@ -6,10 +9,10 @@ const initialState = {
 };
 
 const authenReducer = (state = initialState, action) => {
-    
+
     const userInfo = {
         id: "user",
-        password: "pass",   
+        password: "pass",
         name: 'Sarah Edo',
         avatarURL: null,
         answers: {
@@ -33,10 +36,10 @@ const authenReducer = (state = initialState, action) => {
         }
     }
 
-    const logout = (id) => {
-        _removeLoginUser(id)
-        return true
-    }
+    // const logout = (id) => {
+    //     _removeLoginUser(id)
+    //     return true
+    // }
 
     switch (action.type) {
         case 'LOGIN':
@@ -48,7 +51,7 @@ const authenReducer = (state = initialState, action) => {
         case 'LOGOUT':
             return {
                 ...state,
-                isLoggedIn: !logout(),
+                isLoggedIn: false,
                 loginInfo: {}
             };
         default:

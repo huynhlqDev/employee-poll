@@ -33,13 +33,13 @@ const Login = () => {
     }
 
     return (
-        <div>
+        <div className='login'>
             <h1>Employee Polls</h1>
             <img className='login-logo'
-                src="./login-logo.png"
+                src="./login-logo-2.png"
                 alt={"logo"}
             />
-            <div>
+            <div className='login-form'>
                 <div className="login-input" id="username">
                     <input
                         type="text"
@@ -56,7 +56,7 @@ const Login = () => {
                         className="form-control"
                     />
                 </div>
-                <button disabled={isDisabledSubmit} onClick={handleOnSubmit} className='form-submit-btn'>Submit</button>
+                <button disabled={isDisabledSubmit} onClick={handleOnSubmit} className='login-form-btn'>Submit</button>
             </div>
         </div>
     )

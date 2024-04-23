@@ -11,10 +11,13 @@ const Header = () => {
     const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
     const loginInfo = useSelector(state => state.auth.loginInfo);
 
+    const [existingUsers, setExistingUsers] = useState(_getExistingUsers());
     const [showUserDropdown, setShowUserDropdown] = useState(false)
+
 
     useEffect(() => {
         setShowUserDropdown(false)
+        setExistingUsers(_getExistingUsers())
     }, [isLoggedIn])
 
     const handleLogout = () => {
@@ -58,7 +61,7 @@ const Header = () => {
 
             </div>
             {showUserDropdown &&
-                <UserDropdown users={_getExistingUsers()} handleOnSelectUser={handleOnSelectUser} />}
+                <UserDropdown users={existingUsers} handleOnSelectUser={handleOnSelectUser} />}
         </header>
     )
 }

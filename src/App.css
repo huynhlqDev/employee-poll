@@ -54,8 +54,8 @@
   font-size: medium;
 }
 
-.form-submit-btn {
-  background-color: #aba6a6;
+.login-form-btn {
+  background-color: #c140b4;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -65,11 +65,11 @@
     transition: background-color 0.3s; 
 }
 
-.form-submit-btn:active {
-  background-color: #494444;
+.login-form-btn:active {
+  background-color: #cf9bc9;
 }
 
-.form-submit-btn:disabled {
+.login-form-btn:disabled {
   background-color: #d8d3d3;
   cursor: not-allowed;
 }
@@ -105,6 +105,13 @@
   cursor: pointer;
 }
 
+.user-dropdown {
+  position: absolute;
+  top: 100%; /* Đặt dropdown ở dưới header */
+  right: 0; /* Đặt dropdown ở bên phải */
+  margin-top: 10px; /* Khoảng cách giữa dropdown và header */
+}
+
 .nav ul {
   list-style: none;
   margin: 0;
@@ -131,14 +138,20 @@
 }
 
 
-.login-logo {
-  height: 300px;
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* UserDropdown.css */
-.user-dropdown {
-  position: absolute;
-  top: 100%; /* Đặt dropdown ở dưới header */
-  right: 0; /* Đặt dropdown ở bên phải */
-  margin-top: 10px; /* Khoảng cách giữa dropdown và header */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.login-logo {
+  height: 280px;
+  width: 280px;
+  padding: 20px
 }

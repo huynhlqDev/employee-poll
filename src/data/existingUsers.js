@@ -1,6 +1,5 @@
 
-let existingUsers = [
-];
+let existingUsers = [];
 
 const _saveLoginUser = (newUser) => {
     if (!existingUsers.find(user => user.id === newUser.id)) {
