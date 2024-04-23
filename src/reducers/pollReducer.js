@@ -10,8 +10,10 @@ const pollReducer = (state = initialState, action) => {
                 polls: [...state.polls, action.payload]
             };
         case 'GET_POLLS':
-            // Logic để lấy danh sách bài thăm dò từ server
-            return state;
+            return {
+                ...state,
+                polls: Object.values(action.payload).map(item => item)
+            };
         default:
             return state;
     }

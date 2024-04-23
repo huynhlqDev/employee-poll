@@ -5,8 +5,10 @@ export const createPoll = (poll) => {
     };
 };
 
-export const getPolls = () => {
+export const getPolls = (polls) => {
+    const payload = Object.values(polls).map(i => i)
     return {
-        type: 'GET_POLLS'
+        type: 'GET_POLLS',
+        payload
     };
 };
