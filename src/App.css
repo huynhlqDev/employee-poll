@@ -45,35 +45,6 @@
   }
 }
 
-.form-control {
-  height: 40px;
-  width: 400px;
-  margin: 12px;
-  padding: 8px;
-  border-radius: 8px;
-  font-size: medium;
-}
-
-.login-form-btn {
-  background-color: #c140b4;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s; 
-}
-
-.login-form-btn:active {
-  background-color: #cf9bc9;
-}
-
-.login-form-btn:disabled {
-  background-color: #d8d3d3;
-  cursor: not-allowed;
-}
-
 /* Header.css */
 .header {
   position: relative;
@@ -92,8 +63,15 @@
   padding-left: 20px;
 }
 
-.header-right {
-  padding-right: 20px;
+.header-right div {
+  color: #d049c0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header-right img  {
+  margin: 12px;
 }
 
 .logo-app img {
@@ -137,7 +115,7 @@
   color: #9a3397;
 }
 
-
+/* Login */
 .login {
   display: flex;
   flex-direction: column;
@@ -154,4 +132,33 @@
   height: 280px;
   width: 280px;
   padding: 20px
+}
+
+.form-control {
+  height: 40px;
+  width: 400px;
+  margin: 12px;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: medium;
+}
+
+.login-form-btn {
+  background-color: #c140b4;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s; 
+}
+
+.login-form-btn:active {
+  background-color: #cf9bc9;
+}
+
+.login-form-btn:disabled {
+  background-color: #d8d3d3;
+  cursor: not-allowed;
 }

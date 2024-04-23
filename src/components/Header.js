@@ -49,16 +49,16 @@ const Header = () => {
                 </nav>}
             </div>
             <div className='header-right'>
-                {isLoggedIn &&
-                    <div onClick={handleLogout}>
-                        <img src="/logout-logo.png" alt="Logo" />
-                    </div>}
-                {!isLoggedIn &&
+                {isLoggedIn ?
+                    <div>
+                        <p>Hi {loginInfo.name}!</p>
+                        <img onClick={handleLogout} src="/logout-logo.png" alt="Logo" />
+                    </div>
+                    :
                     <div onClick={handlerLoginBox} className='login-box'>
                         <img src="/login-logo.png" alt="Logo" />
                     </div>
                 }
-
             </div>
             {showUserDropdown &&
                 <UserDropdown users={existingUsers} handleOnSelectUser={handleOnSelectUser} />}
