@@ -50,7 +50,7 @@ const Login = () => {
                 </div>
                 <div className="login-input" id="password">
                     <input
-                        type="text"
+                        type="password"
                         placeholder="Password"
                         onChange={handlePasswordChange}
                         className="form-control"
