@@ -162,3 +162,48 @@
   background-color: #d8d3d3;
   cursor: not-allowed;
 }
+
+/* Poll card */
+.poll {
+  display: flex;
+  flex-direction: column;
+}
+
+.polls-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.polls-section-title {
+  padding: 12px;
+  background-color: #d8d3d3;
+}
+
+.polls-section-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: start;
+  flex-wrap: wrap;
+}
+
+.poll-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 12px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.poll-card-title {
+  font-weight: bold;
+  font-size: 18px;
+}
