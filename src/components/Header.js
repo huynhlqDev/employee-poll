@@ -21,7 +21,9 @@ const Header = () => {
     }, [isLoggedIn])
 
     const handleLogout = () => {
-        dispatch(logout(loginInfo.id))
+        if (window.confirm("Are you sure to logout?")) {
+            dispatch(logout(loginInfo.id))
+        }
     }
 
     const handlerLoginBox = () => {

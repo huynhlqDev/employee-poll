@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../actions/authenActions';
 
 const Login = () => {
@@ -7,6 +7,11 @@ const Login = () => {
     const dispatch = useDispatch()
     const [isDisabledSubmit, setIsDisabledSubmit] = useState(true)
     const [loginInfo, setLoginInfo] = useState({ username: "", password: "" })
+    const state = useSelector(state => state.auth)
+
+    useEffect(() => {
+    console.log("state: ", state);
+    }, [state])
 
     useEffect(() => {
         setIsDisabledSubmit(
@@ -27,6 +32,7 @@ const Login = () => {
             password: e.target.value
         });
     };
+    
 
     const handleOnSubmit = () => {
         dispatch(login(loginInfo.username, loginInfo.password))
