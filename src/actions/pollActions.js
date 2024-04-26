@@ -1,3 +1,5 @@
+import { _getQuestions } from "../data/_DATA";
+
 export const createPoll = (poll) => {
     return {
         type: 'CREATE_POLL',
@@ -5,10 +7,22 @@ export const createPoll = (poll) => {
     };
 };
 
-export const getPolls = (polls) => {
-    const payload = Object.values(polls).map(i => i)
-    return {
-        type: 'GET_POLLS',
-        payload
+export const getPolls = () => {
+
+    return async (dispatch) => {
+        
+        dispatch({ type: 'SET_LOADING', payload: true })
+
+        try {
+            _getQuestions().then( questions => {
+                const value = Object.values(
+                    Object.values(questions).map(item => item)
+                ).map(item => item)
+                dispatch({ type: 'GET_POLLS', payload: value })
+            })
+        } finally {
+            dispatch({ type: 'SET_LOADING', payload: false })
+        }
+
     };
 };

@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getPolls } from '../actions/pollActions';
-import { _getQuestions } from '../data/_DATA';
 import PollCard from './PollCard';
 
 const PollList = () => {
@@ -12,9 +11,7 @@ const PollList = () => {
     const answerIdArray = Object.keys(userInfo.answers);
 
     useEffect(() => {
-        _getQuestions().then(questions => {
-            dispatch(getPolls(questions));
-        })
+        dispatch(getPolls());
     }, [dispatch]);
 
     return (

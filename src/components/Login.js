@@ -7,11 +7,13 @@ const Login = () => {
     const dispatch = useDispatch()
     const [isDisabledSubmit, setIsDisabledSubmit] = useState(true)
     const [loginInfo, setLoginInfo] = useState({ username: "", password: "" })
-    const state = useSelector(state => state.auth)
+    const errorLogin = useSelector(state => state.auth.error)
 
     useEffect(() => {
-    console.log("state: ", state);
-    }, [state])
+        if (errorLogin) {
+            alert(errorLogin.message)
+        }
+    }, [errorLogin])
 
     useEffect(() => {
         setIsDisabledSubmit(
