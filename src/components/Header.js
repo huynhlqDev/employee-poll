@@ -9,7 +9,7 @@ const Header = () => {
 
     const dispatch = useDispatch();
     const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
-    const loginInfo = useSelector(state => state.auth.loginInfo);
+    const user = useSelector(state => state.auth.user);
 
     const [existingUsers, setExistingUsers] = useState(_getExistingUsers());
     const [showUserDropdown, setShowUserDropdown] = useState(false)
@@ -22,7 +22,7 @@ const Header = () => {
 
     const handleLogout = () => {
         if (window.confirm("Are you sure to logout?")) {
-            dispatch(logout(loginInfo.id))
+            dispatch(logout(user.id))
         }
     }
 
@@ -53,7 +53,7 @@ const Header = () => {
             <div className='header-right'>
                 {isLoggedIn ?
                     <div>
-                        <p>Hi {loginInfo.name}!</p>
+                        <p>Hi {user.name}!</p>
                         <img onClick={handleLogout} src="/logout-logo.png" alt="Logo" />
                     </div>
                     :

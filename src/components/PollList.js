@@ -6,7 +6,7 @@ import PollCard from './PollCard';
 const PollList = () => {
     const dispatch = useDispatch();
     const polls = useSelector(state => state.poll.polls);
-    const userInfo = useSelector(state => state.auth.loginInfo);
+    const userInfo = useSelector(state => state.auth.user);
 
     const answerIdArray = Object.keys(userInfo.answers);
 

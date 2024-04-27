@@ -1,22 +1,48 @@
+import {
+  FETCH_USER_SUCCESS,
+  FETCH_USER_REQUEST,
+  FETCH_USER_FAILURE,
+  LOGOUT_SUCCESS
+} from '../actions/authenActions'
 
 const initialState = {
-    isLoggedIn: false,
-    loginInfo: {},
-    error: null
+  loading: false,
+  isLoggedIn: false,
+  user: null,
+  error: null
 };
 
 const authenReducer = (state = initialState, action) => {
 
-    switch (action.type) {
-        case 'FETCH_USERS_SUCCESS':
-          return { ...state, isLoggedIn: true, loginInfo: action.payload, error: null };
-        case 'FETCH_USERS_FAILURE':
-          return { ...state, isLoggedIn: false, loginInfo: {}, error: {message: action.payload} };
-          case 'LOGOUT':
-            return {...state, isLoggedIn: false, loginInfo: {}, error: null}
-        default:
-          return state;
-      }
-};
+  switch (action.type) {
+    case FETCH_USER_REQUEST:
+      return {
+        ...state,
+        loading: true,
+        error: null
+      };
+    case FETCH_USER_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        isLoggedIn: true,
+        user: action.payload
+      };
+    case FETCH_USER_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload
+      };
+    case LOGOUT_SUCCESS:
+      return {
+        ...state,
+        isLoggedIn: false,
+        user: null
+      };
+    default:
+      return state;
+  }
+}
 
 export default authenReducer;
