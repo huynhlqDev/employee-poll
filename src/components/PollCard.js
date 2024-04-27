@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const PollCard = ({ poll }) => {
     
@@ -11,7 +12,7 @@ const PollCard = ({ poll }) => {
         <div className='poll-card'>
             <h5 className='poll-card-title'>{poll.author}</h5>
             <label className='poll-card-time'>{convertTimestampToDateTime(poll.timestamp)}</label>
-            <button className='poll-card-btn'>Show</button>
+            <Link className='poll-card-btn' to={`/answer-poll/${poll.id}`}>Show</Link>
         </div>
     );
 }

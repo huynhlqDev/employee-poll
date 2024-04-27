@@ -10,7 +10,7 @@ const pollReducer = (state = initialState, action) => {
                 ...state,
                 polls: [...state.polls, action.payload]
             };
-        case 'GET_POLLS':
+        case 'FETCH_ALL_POLLS':
             return {
                 ...state,
                 polls: action.payload
@@ -18,7 +18,7 @@ const pollReducer = (state = initialState, action) => {
         default:
             return state;
     }
-    
+
 };
 
 export default pollReducer;

@@ -15,8 +15,8 @@ const Login = () => {
 
     useEffect(() => {
         // auto login for debug
-        usernameInput.current.value = "huynhlq"
-        passwordInput.current.value = "pass123"
+        usernameInput.current.value = "tylermcginnis"
+        passwordInput.current.value = "abc321"
         setLoginInfo({
             username: usernameInput.current.value,
             password: passwordInput.current.value
