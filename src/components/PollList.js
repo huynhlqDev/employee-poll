@@ -2,8 +2,11 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getPolls } from '../actions/pollActions';
 import PollCard from './PollCard';
+import IndicatorLoading from './IndicatorLoading';
 
 const PollList = () => {
+    const isLoading = useSelector(state => state.loading.isLoading);
+
     const dispatch = useDispatch();
     const polls = useSelector(state => state.poll.polls);
     const userInfo = useSelector(state => state.auth.user);
@@ -23,7 +26,7 @@ const PollList = () => {
     }
 
 
-    return (
+    return ( !isLoading &&
         <div className='polls'>
             <div className='polls-section'>
                 <h3 className='polls-section-title'>New Questions</h3>

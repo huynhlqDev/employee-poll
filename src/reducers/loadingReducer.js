@@ -1,3 +1,4 @@
+import { SET_LOADING } from "../actions/loadingAction";
 
 const initialState = {
     isLoading: false
@@ -5,7 +6,7 @@ const initialState = {
 
 const loadingReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'SET_LOADING':
+        case SET_LOADING:
             return { ...state, isLoading: action.payload };
         default:
             return state;

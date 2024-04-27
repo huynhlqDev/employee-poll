@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../actions/authenActions';
 
 const Login = () => {
+    const isLoading = useSelector(state => state.loading.isLoading);
 
     const dispatch = useDispatch()
     const [isDisabledSubmit, setIsDisabledSubmit] = useState(true)
@@ -11,7 +12,16 @@ const Login = () => {
 
     const usernameInput = useRef(null);
     const passwordInput = useRef(null);
+
     useEffect(() => {
+        // auto login for debug
+        usernameInput.current.value = "huynhlq"
+        passwordInput.current.value = "pass123"
+        setLoginInfo({
+            username: usernameInput.current.value,
+            password: passwordInput.current.value
+        })
+
         usernameInput.current.focus()
     }, [])
 
@@ -46,7 +56,7 @@ const Login = () => {
         dispatch(login(loginInfo.username, loginInfo.password))
     }
 
-    return (
+    return (!isLoading &&
         <div className='login'>
             <h1>Employee Polls</h1>
             <img className='login-logo'
