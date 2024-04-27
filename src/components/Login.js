@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../actions/authenActions';
 
@@ -8,6 +8,12 @@ const Login = () => {
     const [isDisabledSubmit, setIsDisabledSubmit] = useState(true)
     const [loginInfo, setLoginInfo] = useState({ username: "", password: "" })
     const errorLogin = useSelector(state => state.auth.error)
+
+    const usernameInput = useRef(null);
+    const passwordInput = useRef(null);
+    useEffect(() => {
+        usernameInput.current.focus()
+    }, [])
 
     useEffect(() => {
         if (errorLogin) {
@@ -19,7 +25,7 @@ const Login = () => {
         setIsDisabledSubmit(
             loginInfo.username === "" || loginInfo.password === ""
         )
-    },[loginInfo])
+    }, [loginInfo])
 
     const handleUsernameChange = (e) => {
         setLoginInfo({
@@ -34,7 +40,7 @@ const Login = () => {
             password: e.target.value
         });
     };
-    
+
 
     const handleOnSubmit = () => {
         dispatch(login(loginInfo.username, loginInfo.password))
@@ -50,6 +56,7 @@ const Login = () => {
             <div className='login-form'>
                 <div className="login-input" id="username">
                     <input
+                        ref={usernameInput}
                         type="text"
                         placeholder="Username"
                         onChange={handleUsernameChange}
@@ -58,6 +65,7 @@ const Login = () => {
                 </div>
                 <div className="login-input" id="password">
                     <input
+                        ref={passwordInput}
                         type="password"
                         placeholder="Password"
                         onChange={handlePasswordChange}

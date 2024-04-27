@@ -5,7 +5,7 @@ const IndicatorLoading = () => {
     const isLoading = useSelector(state => state.loading.isLoading);
 
     useEffect( () => {
-        console.log("isLoading: ", isLoading)
+        console.log( isLoading ? "loading..." : "completed!")
     }, [isLoading])
 
     return (
