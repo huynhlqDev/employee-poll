@@ -1,4 +1,6 @@
-import { _getQuestions } from "../data/_DATA";
+import { useSelector } from "react-redux";
+import { _getQuestions, _saveQuestionAnswer } from "../data/_DATA";
+import { login } from "./authenActions";
 import { setLoading } from "./loadingAction";
 
 export const createPoll = (poll) => ({ type: 'CREATE_POLL', payload: poll });
@@ -25,4 +27,28 @@ export const getPolls = () => {
             })
 
     };
+};
+
+export const answerPoll = (user, qid, answer) => {
+    return (dispatch) => {
+        dispatch(setLoading(true));
+
+        const authedUser = user.id;
+        _saveQuestionAnswer({authedUser, qid, answer})
+        .then(result => {
+            if (result) {
+                dispatch(login(user.id, user.password))
+                dispatch(getPolls());
+            }
+        })
+        .catch( error => {
+            if (error.message) {
+                console.log("error: ", error.message)
+            }
+        })
+        .finally(() => {
+            dispatch(setLoading(false));
+        })
+    }
+
 };

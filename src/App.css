@@ -121,9 +121,9 @@
 
 .user-dropdown {
   position: absolute;
-  top: 100%; /* Đặt dropdown ở dưới header */
-  right: 0; /* Đặt dropdown ở bên phải */
-  margin-top: 10px; /* Khoảng cách giữa dropdown và header */
+  top: 100%;
+  right: 0;
+  margin-top: 10px;
 }
 
 .nav ul {

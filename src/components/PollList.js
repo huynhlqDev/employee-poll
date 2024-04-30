@@ -14,7 +14,9 @@ const PollList = () => {
     const answerIdArray = Object.keys(userInfo.answers);
 
     useEffect(() => {
-        console.log("poll list:", polls)
+        if (polls) {
+            console.log("poll list:", polls)
+        }
     }, [polls]);
 
     useEffect(() => {
