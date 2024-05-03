@@ -10,7 +10,9 @@ const Leaderboard = () => {
     const [leadersboard, setLeadersboard] = useState([]);
 
     useEffect(() => {
-        setLeadersboard(convertUsersToLeaders(userResponse));
+        if (userResponse) {
+            setLeadersboard(convertUsersToLeaders(userResponse));
+        }
     }, [userResponse]);
 
     useEffect(() => {
@@ -43,7 +45,7 @@ const Leaderboard = () => {
                 </thead>
                 <tbody>
                     {leadersboard.map(leader => (
-                        <tr keys={leader.id}>
+                        <tr key={leader.id}>
                             <td>{leader.id}</td>
                             <td>{leader.answersCount}</td>
                             <td>{leader.questionsCount}</td>
