@@ -15,9 +15,7 @@ const CreatePoll = () => {
 
         if (createPollStatus.status) {
             console.log("create success: ", createPollStatus.createdPoll);
-            return () => {
-                clearData()
-            }
+            return clearData
         } else {
             console.log("create failed, error: ", createPollStatus.createPollError);
 

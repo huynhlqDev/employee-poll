@@ -1,17 +1,56 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUsers } from '../actions/userActions';
 
 const Leaderboard = () => {
-    // Logic để tính xếp hạng từ dữ liệu trạng thái
-    const leaderboardData = [];
+    const dispatch = useDispatch();
+    const isLoading = useSelector(state => state.loading.isLoading);
+    const userResponse = useSelector(state => state.users.users);
 
-    return (
+    const [leadersboard, setLeadersboard] = useState([]);
+
+    useEffect(() => {
+        setLeadersboard(convertUsersToLeaders(userResponse));
+    }, [userResponse]);
+
+    useEffect(() => {
+        dispatch(getUsers())
+    }, [dispatch]);
+
+    const convertUsersToLeaders = (userResponse) => {
+        return userResponse && userResponse
+            .map(user => ({
+                id: user.id,
+                answersCount: Object.keys(user.answers).length,
+                questionsCount: user.questions.length
+            }))
+            .sort((a, b) => {
+                return b.answersCount - a.answersCount;
+            })
+    };
+
+
+    return (!isLoading &&
         <div>
             <h2>Leaderboard</h2>
-            <ul>
-                {leaderboardData.map((employee, index) => (
-                    <li key={index}>{employee.name}: {employee.points}</li>
-                ))}
-            </ul>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Users</th>
+                        <th>Answered</th>
+                        <th>Created</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {leadersboard.map(leader => (
+                        <tr keys={leader.id}>
+                            <td>{leader.id}</td>
+                            <td>{leader.answersCount}</td>
+                            <td>{leader.questionsCount}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </div>
     );
 };
