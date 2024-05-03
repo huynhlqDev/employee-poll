@@ -15,7 +15,7 @@ const PollList = () => {
 
     useEffect(() => {
         if (polls) {
-            console.log("poll list:", polls)
+            // console.log("poll list:", polls)
         }
     }, [polls]);
 

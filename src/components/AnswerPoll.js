@@ -25,7 +25,7 @@ const AnswerPoll = () => {
 
     const checkIsVoted = () => {
         if (currentPoll) {
-            
+
             const votes1 = currentPoll.optionOne?.votes
             const votes2 = currentPoll.optionTwo?.votes
 
@@ -65,7 +65,10 @@ const AnswerPoll = () => {
     return (currentPoll &&
         <div>
             <h1>Poll by {currentPoll?.author}</h1>
-            <img className='login-logo' src="./login-logo-2.png" alt="logo" />
+            <img className='login-logo'
+                src="./login-logo.png"
+                alt={"logo"}
+            />
             <label>Would You Rather</label>
             <div>
                 <div>
@@ -79,7 +82,7 @@ const AnswerPoll = () => {
                     {voted && <p>votes: {currentPoll?.optionTwo?.votes?.length}</p>}
                     {voted && <p>Percent: {optionPercentage?.percentageOptionTwo}%</p>}
                     <button disabled={voted} onClick={() => { handleAnswerPoll('optionTwo') }}>Click</button>
-                </div>
+                </div>  
             </div>
         </div>
     );
