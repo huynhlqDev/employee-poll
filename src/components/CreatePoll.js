@@ -2,6 +2,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
 import { createPoll, clearState } from '../actions/createPollActions';
+import { Navigate } from 'react-router-dom';
+
 
 const CreatePoll = () => {
     const dispatch = useDispatch();
@@ -9,16 +11,17 @@ const CreatePoll = () => {
     const createPollStatus = useSelector(state => state.createPoll);
 
     const [isDisabledSubmit, setIsDisabledSubmit] = useState(true)
-    const [questionInfo, setQuestionInfo] = useState({optionOneText: "", optionTwoText: ""});
+    const [questionInfo, setQuestionInfo] = useState({ optionOneText: "", optionTwoText: "" });
+    const [finish, setFinish] = useState(false);
 
     useEffect(() => {
 
         if (createPollStatus.status) {
-            console.log("create success: ", createPollStatus.createdPoll);
+            window.alert("Create success!")
+            setFinish(true);
             return clearData
-        } else {
-            console.log("create failed, error: ", createPollStatus.createPollError);
-
+        } else if (createPollStatus.error) {
+            console.log("create failed, error: ", createPollStatus.error);
         }
 
     }, [createPollStatus])
@@ -51,7 +54,7 @@ const CreatePoll = () => {
         dispatch(clearState())
     }
 
-    return (
+    return (finish ? <Navigate to="/poll-list" /> :
         <div className='login'>
             <h1>Would You Rather</h1>
             <p>Create Your Own Poll</p>
