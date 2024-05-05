@@ -1,6 +1,30 @@
 import {
+    _getUser,
     _saveQuestion,
     _saveQuestionAnswer } from "./data/_DATA";
+
+// Test: _getUser funtion
+describe("_getUser", () => {
+    const existUsername = "tylermcginnis";
+    const correctPassword = "abc321"
+
+    // Matches when correctly formatted data is passed
+    it("Matches when correctly formatted data is passed", async () => {
+        var user = await _getUser(existUsername, correctPassword);
+        expect(user.id).toEqual(existUsername);
+        expect(user.password).toEqual(correctPassword);
+    })
+
+    // Matches when the username variable is NOT formatted correctly
+    it("Matches when the username variable is NOT formatted correctly", async () => {
+        await expect(_getUser("", correctPassword)).rejects.toEqual("User not found")
+    })
+
+    // Matches when the username variable is NOT formatted correctly
+    it("Matches when the username variable is NOT formatted correctly", async () => {
+        await expect(_getUser(existUsername, "")).rejects.toEqual("User not found")
+    })
+})
 
 // Test: _saveQuestion function
 describe("_saveQuestion", () => {

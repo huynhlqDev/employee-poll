@@ -19,7 +19,7 @@ const Login = () => {
 
     useEffect(() => {
         if (errorLogin) {
-            alert(errorLogin.message)
+            alert(errorLogin)
         }
     }, [errorLogin])
 

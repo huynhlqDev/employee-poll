@@ -145,7 +145,7 @@ export function _getUser(userId, password) {
       setTimeout(() => resolve(user), 1000)
     })
   } else {
-    return Promise.reject(new Error('User not found'));
+    return Promise.reject("User not found");
   }
   
 }
