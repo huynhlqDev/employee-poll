@@ -15,46 +15,48 @@ const AnswerPoll = () => {
     const [optionPercentage, setOptionPercentage] = useState(null);
 
     useEffect(() => {
+
+        const checkIsVoted = () => {
+            if (currentPoll) {
+
+                const votes1 = currentPoll.optionOne?.votes
+                const votes2 = currentPoll.optionTwo?.votes
+
+                for (let i = 0; i < votes1.length; i++) {
+                    if (votes1[i] === user.id) {
+                        setVoted(true)
+                        break;
+                    }
+                }
+                for (let i = 0; i < votes2.length; i++) {
+                    if (votes2[i] === user.id) {
+                        setVoted(true)
+                        break;
+                    }
+                }
+            }
+        };
+
+        const calculatePercentage = () => {
+            if (currentPoll) {
+                const optionOneVoteCount = currentPoll.optionOne?.votes?.length;
+                const optionTwoVoteCount = currentPoll.optionTwo?.votes?.length;
+                const percentageOptionOne = ((optionOneVoteCount / (optionOneVoteCount + optionTwoVoteCount)) * 100).toFixed(2);
+                const percentageOptionTwo = ((optionTwoVoteCount / (optionOneVoteCount + optionTwoVoteCount)) * 100).toFixed(2);
+                return ({ percentageOptionOne, percentageOptionTwo });
+            } else {
+                return null
+            };
+        };
+
         checkIsVoted();
         setOptionPercentage(calculatePercentage());
-    }, [currentPoll]);
+        
+    }, [currentPoll, user, id]);
 
     useEffect(() => {
         setCurrentPoll(polls.find(user => user.id === id));
-    }, [polls, user]);
-
-    const checkIsVoted = () => {
-        if (currentPoll) {
-
-            const votes1 = currentPoll.optionOne?.votes
-            const votes2 = currentPoll.optionTwo?.votes
-
-            for (let i = 0; i < votes1.length; i++) {
-                if (votes1[i] === user.id) {
-                    setVoted(true)
-                    break;
-                }
-            }
-            for (let i = 0; i < votes2.length; i++) {
-                if (votes2[i] === user.id) {
-                    setVoted(true)
-                    break;
-                }
-            }
-        }
-    };
-
-    const calculatePercentage = () => {
-        if (currentPoll) {
-            const optionOneVoteCount = currentPoll.optionOne?.votes?.length;
-            const optionTwoVoteCount = currentPoll.optionTwo?.votes?.length;
-            const percentageOptionOne = ((optionOneVoteCount / (optionOneVoteCount + optionTwoVoteCount)) * 100).toFixed(2);
-            const percentageOptionTwo = ((optionTwoVoteCount / (optionOneVoteCount + optionTwoVoteCount)) * 100).toFixed(2);
-            return ({ percentageOptionOne, percentageOptionTwo });
-        } else {
-            return null
-        };
-    };
+    }, [polls, user, id]);
 
     const handleAnswerPoll = (answer) => {
         if (!isLoading) {
@@ -82,7 +84,7 @@ const AnswerPoll = () => {
                     {voted && <p>votes: {currentPoll?.optionTwo?.votes?.length}</p>}
                     {voted && <p>Percent: {optionPercentage?.percentageOptionTwo}%</p>}
                     <button disabled={voted} onClick={() => { handleAnswerPoll('optionTwo') }}>Click</button>
-                </div>  
+                </div>
             </div>
         </div>
     );

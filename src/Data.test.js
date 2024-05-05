@@ -1,6 +1,6 @@
 import {
     _saveQuestion,
-    _saveQuestionAnswer } from "../data/_DATA";
+    _saveQuestionAnswer } from "./data/_DATA";
 
 // Test: _saveQuestion function
 describe("_saveQuestion", () => {

@@ -19,12 +19,15 @@ const CreatePoll = () => {
         if (createPollStatus.status) {
             window.alert("Create success!")
             setFinish(true);
+            const clearData = () => {
+                dispatch(clearState())
+            }
             return clearData
         } else if (createPollStatus.error) {
             console.log("create failed, error: ", createPollStatus.error);
         }
 
-    }, [createPollStatus])
+    }, [createPollStatus, dispatch])
 
     useEffect(() => {
         setIsDisabledSubmit(
@@ -49,10 +52,6 @@ const CreatePoll = () => {
     const handleCreatePoll = () => {
         dispatch(createPoll(userId, questionInfo.optionOneText, questionInfo.optionTwoText));
     };
-
-    const clearData = () => {
-        dispatch(clearState())
-    }
 
     return (finish ? <Navigate to="/poll-list" /> :
         <div className='login'>

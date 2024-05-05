@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getPolls } from '../actions/pollActions';
 import PollCard from './PollCard';
-import IndicatorLoading from './IndicatorLoading';
 
 const PollList = () => {
     const isLoading = useSelector(state => state.loading.isLoading);
