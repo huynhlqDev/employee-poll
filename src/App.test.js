@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 import { thunk } from 'redux-thunk';
@@ -11,19 +11,44 @@ import Leaderboard from './components/Leaderboard';
 import CreatePoll from './components/CreatePoll';
 import AnswerPoll from './components/AnswerPoll';
 
-// Test render App component
-test('renders App component', () => {
-  var app = render(
-    <Provider store={store}>
-      <App />
-    </Provider>
-  );
-
-  const linkElement = screen.getByText(/Employee Polls/);
-  expect(linkElement).toBeInTheDocument();
-  expect(app).toMatchSnapshot();
+// Test DOM component
+describe('Test DOM component', () => {
+  it("DOM test which uses the fireEvent function", () => {
+    var app = render(
+      <Provider store={store}>
+        <App />
+      </Provider>
+    );
+  
+    // verify snapshot
+    expect(app).toMatchSnapshot();
+  
+    // verify DOM component
+    const loginTitle = screen.getByText(/Employee Polls/);
+    const submitButton = screen.getByText(/Submit/);
+    const usernameInput = screen.getByPlaceholderText(/Username/);
+    const passwordInput = screen.getByPlaceholderText(/Password/);
+  
+    expect(loginTitle).toBeInTheDocument();
+    expect(submitButton).toBeInTheDocument();
+    expect(usernameInput).toBeInTheDocument();
+    expect(passwordInput).toBeInTheDocument();
+  
+    // DOM fire event
+    fireEvent.change(usernameInput, { target: { value: 'zoshikanlu' } });
+    fireEvent.change(passwordInput, { target: { value: 'pass246' } });
+    fireEvent.click(submitButton);
+    
+    // Confirm hiding the login page when submitted successfully
+    expect(loginTitle).not.toBeInTheDocument();
+    expect(usernameInput).not.toBeInTheDocument();
+    expect(passwordInput).not.toBeInTheDocument();
+    expect(submitButton).not.toBeInTheDocument();
+  })
+  
 });
 
+// Test: component snapshot
 describe("matches the snapshot when render component", () => {
   //Test: Login component
   it("Login", () => {

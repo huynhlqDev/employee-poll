@@ -14,15 +14,7 @@ const Login = () => {
     const passwordInput = useRef(null);
 
     useEffect(() => {
-        // auto login for debug
-        usernameInput.current.value = "tylermcginnis"
-        passwordInput.current.value = "abc321"
-        setLoginInfo({
-            username: usernameInput.current.value,
-            password: passwordInput.current.value
-        })
-
-        usernameInput.current.focus()
+        // usernameInput.current.focus()
     }, [])
 
     useEffect(() => {
@@ -64,8 +56,9 @@ const Login = () => {
                 alt={"logo"}
             />
             <div className='login-form'>
-                <div className="login-input" id="username">
+                <div className="login-input">
                     <input
+                        id='username'
                         ref={usernameInput}
                         type="text"
                         placeholder="Username"
@@ -73,8 +66,9 @@ const Login = () => {
                         className="form-control"
                     />
                 </div>
-                <div className="login-input" id="password">
+                <div className="login-input">
                     <input
+                        id='password'
                         ref={passwordInput}
                         type="password"
                         placeholder="Password"

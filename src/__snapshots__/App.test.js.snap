@@ -1,5 +1,220 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Test DOM component DOM test which uses the fireEvent function 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <header
+        class="header"
+      >
+        <div
+          class="header-left"
+        >
+          <div
+            class="logo-app"
+          >
+            <a
+              href="/"
+            >
+              <img
+                alt="Logo"
+                src="/polls-logo.png"
+              />
+            </a>
+          </div>
+        </div>
+        <div
+          class="header-right"
+        >
+          <div
+            class="login-box"
+          >
+            <img
+              alt="Logo"
+              src="/login-logo.png"
+            />
+          </div>
+        </div>
+      </header>
+      <div>
+        <div
+          class="login"
+        >
+          <h1>
+            Employee Polls
+          </h1>
+          <img
+            alt="logo"
+            class="login-logo"
+            src="./login-logo-2.png"
+          />
+          <div
+            class="login-form"
+          >
+            <div
+              class="login-input"
+            >
+              <input
+                class="form-control"
+                id="username"
+                placeholder="Username"
+                type="text"
+              />
+            </div>
+            <div
+              class="login-input"
+            >
+              <input
+                class="form-control"
+                id="password"
+                placeholder="Password"
+                type="password"
+              />
+            </div>
+            <button
+              class="login-form-btn"
+              disabled=""
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <header
+      class="header"
+    >
+      <div
+        class="header-left"
+      >
+        <div
+          class="logo-app"
+        >
+          <a
+            href="/"
+          >
+            <img
+              alt="Logo"
+              src="/polls-logo.png"
+            />
+          </a>
+        </div>
+      </div>
+      <div
+        class="header-right"
+      >
+        <div
+          class="login-box"
+        >
+          <img
+            alt="Logo"
+            src="/login-logo.png"
+          />
+        </div>
+      </div>
+    </header>
+    <div>
+      <div
+        class="login"
+      >
+        <h1>
+          Employee Polls
+        </h1>
+        <img
+          alt="logo"
+          class="login-logo"
+          src="./login-logo-2.png"
+        />
+        <div
+          class="login-form"
+        >
+          <div
+            class="login-input"
+          >
+            <input
+              class="form-control"
+              id="username"
+              placeholder="Username"
+              type="text"
+            />
+          </div>
+          <div
+            class="login-input"
+          >
+            <input
+              class="form-control"
+              id="password"
+              placeholder="Password"
+              type="password"
+            />
+          </div>
+          <button
+            class="login-form-btn"
+            disabled=""
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
 exports[`matches the snapshot when render component Answer poll 1`] = `
 Object {
   "asFragment": [Function],
@@ -349,93 +564,9 @@ exports[`matches the snapshot when render component Login 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
-    <div>
-      <div
-        class="login"
-      >
-        <h1>
-          Employee Polls
-        </h1>
-        <img
-          alt="logo"
-          class="login-logo"
-          src="./login-logo-2.png"
-        />
-        <div
-          class="login-form"
-        >
-          <div
-            class="login-input"
-            id="username"
-          >
-            <input
-              class="form-control"
-              placeholder="Username"
-              type="text"
-            />
-          </div>
-          <div
-            class="login-input"
-            id="password"
-          >
-            <input
-              class="form-control"
-              placeholder="Password"
-              type="password"
-            />
-          </div>
-          <button
-            class="login-form-btn"
-          >
-            Submit
-          </button>
-        </div>
-      </div>
-    </div>
+    <div />
   </body>,
-  "container": <div>
-    <div
-      class="login"
-    >
-      <h1>
-        Employee Polls
-      </h1>
-      <img
-        alt="logo"
-        class="login-logo"
-        src="./login-logo-2.png"
-      />
-      <div
-        class="login-form"
-      >
-        <div
-          class="login-input"
-          id="username"
-        >
-          <input
-            class="form-control"
-            placeholder="Username"
-            type="text"
-          />
-        </div>
-        <div
-          class="login-input"
-          id="password"
-        >
-          <input
-            class="form-control"
-            placeholder="Password"
-            type="password"
-          />
-        </div>
-        <button
-          class="login-form-btn"
-        >
-          Submit
-        </button>
-      </div>
-    </div>
-  </div>,
+  "container": <div />,
   "debug": [Function],
   "findAllByAltText": [Function],
   "findAllByDisplayValue": [Function],
@@ -497,219 +628,6 @@ Object {
     <div />
   </body>,
   "container": <div />,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
-`;
-
-exports[`renders App component 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <header
-        class="header"
-      >
-        <div
-          class="header-left"
-        >
-          <div
-            class="logo-app"
-          >
-            <a
-              href="/"
-            >
-              <img
-                alt="Logo"
-                src="/polls-logo.png"
-              />
-            </a>
-          </div>
-        </div>
-        <div
-          class="header-right"
-        >
-          <div
-            class="login-box"
-          >
-            <img
-              alt="Logo"
-              src="/login-logo.png"
-            />
-          </div>
-        </div>
-      </header>
-      <div>
-        <div
-          class="login"
-        >
-          <h1>
-            Employee Polls
-          </h1>
-          <img
-            alt="logo"
-            class="login-logo"
-            src="./login-logo-2.png"
-          />
-          <div
-            class="login-form"
-          >
-            <div
-              class="login-input"
-              id="username"
-            >
-              <input
-                class="form-control"
-                placeholder="Username"
-                type="text"
-              />
-            </div>
-            <div
-              class="login-input"
-              id="password"
-            >
-              <input
-                class="form-control"
-                placeholder="Password"
-                type="password"
-              />
-            </div>
-            <button
-              class="login-form-btn"
-            >
-              Submit
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <header
-      class="header"
-    >
-      <div
-        class="header-left"
-      >
-        <div
-          class="logo-app"
-        >
-          <a
-            href="/"
-          >
-            <img
-              alt="Logo"
-              src="/polls-logo.png"
-            />
-          </a>
-        </div>
-      </div>
-      <div
-        class="header-right"
-      >
-        <div
-          class="login-box"
-        >
-          <img
-            alt="Logo"
-            src="/login-logo.png"
-          />
-        </div>
-      </div>
-    </header>
-    <div>
-      <div
-        class="login"
-      >
-        <h1>
-          Employee Polls
-        </h1>
-        <img
-          alt="logo"
-          class="login-logo"
-          src="./login-logo-2.png"
-        />
-        <div
-          class="login-form"
-        >
-          <div
-            class="login-input"
-            id="username"
-          >
-            <input
-              class="form-control"
-              placeholder="Username"
-              type="text"
-            />
-          </div>
-          <div
-            class="login-input"
-            id="password"
-          >
-            <input
-              class="form-control"
-              placeholder="Password"
-              type="password"
-            />
-          </div>
-          <button
-            class="login-form-btn"
-          >
-            Submit
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
   "findAllByDisplayValue": [Function],
