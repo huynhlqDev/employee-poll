@@ -1,7 +1,6 @@
 import {
     _saveQuestion,
-    _saveQuestionAnswer
-} from "../data/_DATA";
+    _saveQuestionAnswer } from "../data/_DATA";
 
 // Test: _saveQuestion function
 describe("_saveQuestion", () => {
@@ -72,21 +71,21 @@ describe("_saveQuestionAnswer", () => {
         expect(actualResult).toEqual(true);
     });
 
-    // Work correctly when missed authedUser
+    // Works correctly when authedUser is missing
     it("Matches when missed authedUser", async () => {
         var qid = "am8ehyc8byjqgar0jgpub9";
         var answer = "answerOne";
         await expect(_saveQuestionAnswer({ qid, answer })).rejects.toEqual(rejectResponse);
     });
 
-    // Work correctly when missed qid
+    // Works correctly when qid is missing
     it("Matches when missed authedUser", async () => {
         var authedUser = "huynhlq";
         var answer = "answerOne";
         await expect(_saveQuestionAnswer({ authedUser, answer })).rejects.toEqual(rejectResponse);
     });
 
-    // Work correctly when missed answer
+    // Works correctly when answer is missing
     it("Matches when missed authedUser", async () => {
         var authedUser = "huynhlq";
         var qid = "am8ehyc8byjqgar0jgpub9";
