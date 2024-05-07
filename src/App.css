@@ -3,7 +3,7 @@
 }
 
 head, body {
-  background-color: #FAE6FA;
+  background-color: #eff5fff1;
 }
 
 .App {
@@ -227,7 +227,9 @@ head, body {
 /* Poll card */
 .poll {
   display: flex;
+  justify-content: space-around;
   flex-direction: column;
+  padding: 24px;
 }
 
 .polls-section {
@@ -236,11 +238,18 @@ head, body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  margin: 24px;
+  padding: 12px;
+  background-color: #ffffff;
+  border: 1px solid #e3f2fa;
+  border-radius: 2px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
 }
 
 .polls-section-title {
-  padding: 12px;
-  background-color: #d8d3d3;
+  color: #151e2cf1;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 .polls-section-body {
@@ -254,17 +263,44 @@ head, body {
 .poll-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  height: 150px;
+  width: 220px;
   margin: 12px;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  background-color: #ffffff63;
+  border: 1px solid #e3f2fa;
+  border-radius: 2px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
 }
 
 .poll-card-title {
+  margin: 0;
   font-weight: bold;
   font-size: 18px;
+  color: #293745;
+}
+
+.poll-card-time {
+  font-size: 14px;
+  color: #5E728C;
+}
+
+.poll-card-btn {
+  text-align: center;
+  width: 100%;
+  font-size: 14px;
+  padding: 8px;
+  margin-top: 12px;
+  text-decoration: none;
+  background-color: #7bb3eb;
+  color: #ffffff;
+  font-weight: 600;
+  border: 1px solid #C7CFD9;
+  border-radius: 4px;
+}
+
+.poll-card-btn:hover {
+  background-color: #7bb3ebc2;
 }
