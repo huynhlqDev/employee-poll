@@ -33,8 +33,8 @@ const Leaderboard = () => {
 
 
     return (!isLoading &&
-        <div>
-            <h2>Leaderboard</h2>
+        <div className='polls-section'>
+            <h3 className='polls-section-title'>Leaderboard</h3>
             <table>
                 <thead>
                     <tr>

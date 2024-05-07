@@ -304,3 +304,32 @@ head, body {
 .poll-card-btn:hover {
   background-color: #7bb3ebc2;
 }
+
+
+/* Leadersboard */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th, td {
+  padding: 8px;
+}
+
+th {
+  background-color: #7bb3ebc2;
+}
+
+td {
+  text-align: start;
+  font-family: Arial, sans-serif;
+  color: #0c2946c2;
+}
+
+tr:nth-child(even) {
+  background-color: #7bb3eb2b;
+}
