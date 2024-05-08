@@ -41,43 +41,49 @@ Object {
         <div
           class="login"
         >
-          <h1>
-            Employee Polls
-          </h1>
-          <img
-            alt="logo"
-            class="login-logo"
-            src="./login-logo-2.png"
-          />
           <div
-            class="login-form"
+            class="login-body"
           >
+            <h1
+              class="login-title"
+            >
+              Employee Polls
+            </h1>
+            <img
+              alt="logo"
+              class="login-logo"
+              src="./auth-user.png"
+            />
             <div
-              class="login-input"
+              class="login-form"
             >
-              <input
-                class="form-control"
-                id="username"
-                placeholder="Username"
-                type="text"
-              />
+              <div
+                class="login-input"
+              >
+                <input
+                  class="form-control"
+                  id="username"
+                  placeholder="Username"
+                  type="text"
+                />
+              </div>
+              <div
+                class="login-input"
+              >
+                <input
+                  class="form-control"
+                  id="password"
+                  placeholder="Password"
+                  type="password"
+                />
+              </div>
+              <button
+                class="login-form-btn"
+                disabled=""
+              >
+                Sign in
+              </button>
             </div>
-            <div
-              class="login-input"
-            >
-              <input
-                class="form-control"
-                id="password"
-                placeholder="Password"
-                type="password"
-              />
-            </div>
-            <button
-              class="login-form-btn"
-              disabled=""
-            >
-              Submit
-            </button>
           </div>
         </div>
       </div>
@@ -120,43 +126,49 @@ Object {
       <div
         class="login"
       >
-        <h1>
-          Employee Polls
-        </h1>
-        <img
-          alt="logo"
-          class="login-logo"
-          src="./login-logo-2.png"
-        />
         <div
-          class="login-form"
+          class="login-body"
         >
+          <h1
+            class="login-title"
+          >
+            Employee Polls
+          </h1>
+          <img
+            alt="logo"
+            class="login-logo"
+            src="./auth-user.png"
+          />
           <div
-            class="login-input"
+            class="login-form"
           >
-            <input
-              class="form-control"
-              id="username"
-              placeholder="Username"
-              type="text"
-            />
+            <div
+              class="login-input"
+            >
+              <input
+                class="form-control"
+                id="username"
+                placeholder="Username"
+                type="text"
+              />
+            </div>
+            <div
+              class="login-input"
+            >
+              <input
+                class="form-control"
+                id="password"
+                placeholder="Password"
+                type="password"
+              />
+            </div>
+            <button
+              class="login-form-btn"
+              disabled=""
+            >
+              Sign in
+            </button>
           </div>
-          <div
-            class="login-input"
-          >
-            <input
-              class="form-control"
-              id="password"
-              placeholder="Password"
-              type="password"
-            />
-          </div>
-          <button
-            class="login-form-btn"
-            disabled=""
-          >
-            Submit
-          </button>
         </div>
       </div>
     </div>
@@ -282,108 +294,132 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="login"
+        class="create-poll-body"
       >
-        <h1>
-          Would You Rather
-        </h1>
-        <p>
-          Create Your Own Poll
-        </p>
-        <img
-          alt="logo"
-          class="login-logo"
-          src="./login-logo-2.png"
-        />
         <div
-          class="login-form"
+          class="polls-section "
         >
+          <h3
+            class="polls-section-title"
+          >
+            Would You Rather
+          </h3>
+          <p
+            class="sub-title"
+          >
+            Create Your Own Poll
+          </p>
+          <img
+            alt="logo"
+            class="create-poll-logo"
+            src="./create_poll.png"
+          />
           <div
-            class="login-input"
-            id="optionOne"
+            class="create-form"
           >
-            <p>
-              First Option
-            </p>
-            <input
-              class="form-control"
-              placeholder="Option one"
-              type="text"
-            />
+            <div
+              class=""
+              id="optionOne"
+            >
+              <p
+                class="sub-title"
+              >
+                First Option
+              </p>
+              <input
+                class="create-form-control"
+                placeholder="Option one"
+                type="text"
+              />
+            </div>
+            <div
+              class=""
+              id="optionTwo"
+            >
+              <p
+                class="sub-title"
+              >
+                Second Option
+              </p>
+              <input
+                class="create-form-control"
+                placeholder="Option two"
+                type="text"
+              />
+            </div>
+            <button
+              class="create-form-btn"
+              disabled=""
+            >
+              Create
+            </button>
           </div>
-          <div
-            class="login-input"
-            id="optionTwo"
-          >
-            <p>
-              Second Option
-            </p>
-            <input
-              class="form-control"
-              placeholder="Option two"
-              type="text"
-            />
-          </div>
-          <button
-            class="login-form-btn"
-            disabled=""
-          >
-            Submit
-          </button>
         </div>
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="login"
+      class="create-poll-body"
     >
-      <h1>
-        Would You Rather
-      </h1>
-      <p>
-        Create Your Own Poll
-      </p>
-      <img
-        alt="logo"
-        class="login-logo"
-        src="./login-logo-2.png"
-      />
       <div
-        class="login-form"
+        class="polls-section "
       >
+        <h3
+          class="polls-section-title"
+        >
+          Would You Rather
+        </h3>
+        <p
+          class="sub-title"
+        >
+          Create Your Own Poll
+        </p>
+        <img
+          alt="logo"
+          class="create-poll-logo"
+          src="./create_poll.png"
+        />
         <div
-          class="login-input"
-          id="optionOne"
+          class="create-form"
         >
-          <p>
-            First Option
-          </p>
-          <input
-            class="form-control"
-            placeholder="Option one"
-            type="text"
-          />
+          <div
+            class=""
+            id="optionOne"
+          >
+            <p
+              class="sub-title"
+            >
+              First Option
+            </p>
+            <input
+              class="create-form-control"
+              placeholder="Option one"
+              type="text"
+            />
+          </div>
+          <div
+            class=""
+            id="optionTwo"
+          >
+            <p
+              class="sub-title"
+            >
+              Second Option
+            </p>
+            <input
+              class="create-form-control"
+              placeholder="Option two"
+              type="text"
+            />
+          </div>
+          <button
+            class="create-form-btn"
+            disabled=""
+          >
+            Create
+          </button>
         </div>
-        <div
-          class="login-input"
-          id="optionTwo"
-        >
-          <p>
-            Second Option
-          </p>
-          <input
-            class="form-control"
-            placeholder="Option two"
-            type="text"
-          />
-        </div>
-        <button
-          class="login-form-btn"
-          disabled=""
-        >
-          Submit
-        </button>
       </div>
     </div>
   </div>,

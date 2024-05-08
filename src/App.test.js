@@ -25,7 +25,7 @@ describe('Test DOM component', () => {
   
     // verify DOM component
     const loginTitle = screen.getByText(/Employee Polls/);
-    const submitButton = screen.getByText(/Submit/);
+    const submitButton = screen.getByText(/Sign in/);
     const usernameInput = screen.getByPlaceholderText(/Username/);
     const passwordInput = screen.getByPlaceholderText(/Password/);
   
