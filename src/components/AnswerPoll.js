@@ -41,6 +41,9 @@ const AnswerPoll = () => {
             if (currentPoll) {
                 const optionOneVoteCount = currentPoll.optionOne?.votes?.length;
                 const optionTwoVoteCount = currentPoll.optionTwo?.votes?.length;
+                if (optionOneVoteCount === 0 && optionTwoVoteCount === 0) {
+                    return ({ percentageOptionOne: 50, percentageOptionTwo: 50 });
+                }
                 const percentageOptionOne = ((optionOneVoteCount / (optionOneVoteCount + optionTwoVoteCount)) * 100).toFixed(2);
                 const percentageOptionTwo = ((optionTwoVoteCount / (optionOneVoteCount + optionTwoVoteCount)) * 100).toFixed(2);
                 return ({ percentageOptionOne, percentageOptionTwo });
@@ -51,7 +54,7 @@ const AnswerPoll = () => {
 
         checkIsVoted();
         setOptionPercentage(calculatePercentage());
-        
+
     }, [currentPoll, user, id]);
 
     useEffect(() => {
@@ -64,26 +67,46 @@ const AnswerPoll = () => {
         }
     };
 
+    const paragraphStyleOptionOne = {
+        width: optionPercentage?.percentageOptionOne + "%",
+    };
+
+    const paragraphStyleOptionTwo = {
+        width: optionPercentage?.percentageOptionTwo + "%",
+    };
+
     return (currentPoll &&
-        <div>
-            <h1>Poll by {currentPoll?.author}</h1>
-            <img className='login-logo'
-                src="./login-logo.png"
-                alt={"logo"}
-            />
-            <label>Would You Rather</label>
-            <div>
-                <div>
-                    <h5>answer 1: {currentPoll?.optionOne?.text}</h5>
-                    {voted && <p>votes: {currentPoll?.optionOne?.votes?.length}</p>}
-                    {voted && <p>Percent: {optionPercentage?.percentageOptionOne}%</p>}
-                    <button disabled={voted} onClick={() => { handleAnswerPoll('optionOne') }}>Click</button>
+        <div className='create-poll-body'>
+            <div className='polls-section'>
+                <h3 className='polls-section-title'>Poll by {currentPoll?.author}</h3>
+                <div className='poll-result'>
+                    <div
+                        className='option-one-area'
+                        style={paragraphStyleOptionOne}
+                    >{optionPercentage?.percentageOptionOne}%</div>
+                    <div
+                        className='option-two-area'
+                        style={paragraphStyleOptionTwo}
+                    >{optionPercentage?.percentageOptionTwo}%</div>
                 </div>
-                <div>
-                    <h5>answer 2: {currentPoll?.optionTwo?.text}</h5>
-                    {voted && <p>votes: {currentPoll?.optionTwo?.votes?.length}</p>}
-                    {voted && <p>Percent: {optionPercentage?.percentageOptionTwo}%</p>}
-                    <button disabled={voted} onClick={() => { handleAnswerPoll('optionTwo') }}>Click</button>
+                <p className='sub-title'>Would You Rather</p>
+                <div className='answer-poll'>
+                    <div className='answer-poll-option'>
+                        <p className='question-title'>{currentPoll?.optionOne?.text}</p>
+                        <button
+                         disabled={voted}
+                          onClick={() => { handleAnswerPoll('optionOne') }}
+                           className='vote-btn option-one-btn'
+                           >{voted ? `votes: ${currentPoll?.optionOne?.votes?.length}` : "Click"}</button>
+                    </div>
+                    <div className='answer-poll-option'>
+                        <p className='question-title'>{currentPoll?.optionTwo?.text}</p>
+                        <button
+                            disabled={voted}
+                            onClick={() => { handleAnswerPoll('optionTwo') }}
+                            className='vote-btn option-two-btn'
+                        >{voted ? `votes: ${currentPoll?.optionTwo?.votes?.length}` : "Click"}</button>
+                    </div>
                 </div>
             </div>
         </div>
