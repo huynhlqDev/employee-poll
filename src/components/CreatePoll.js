@@ -54,33 +54,35 @@ const CreatePoll = () => {
     };
 
     return (finish ? <Navigate to="/poll-list" /> :
-        <div className='login'>
-            <h1>Would You Rather</h1>
-            <p>Create Your Own Poll</p>
-            <img className='login-logo'
-                src="./login-logo-2.png"
-                alt={"logo"}
-            />
-            <div className='login-form'>
-                <div className="login-input" id="optionOne">
-                    <p>First Option</p>
-                    <input
-                        type="text"
-                        placeholder="Option one"
-                        onChange={handleOptionOneChange}
-                        className="form-control"
-                    />
+        <div className='create-poll-body'>
+            <div className='polls-section '>
+                <h3 className='polls-section-title'>Would You Rather</h3>
+                <p className='sub-title'>Create Your Own Poll</p>
+                <img className='create-poll-logo'
+                    src="./create_poll.png"
+                    alt={"logo"}
+                />
+                <div className='create-form'>
+                    <div className="" id="optionOne">
+                        <p className='sub-title'>First Option</p>
+                        <input
+                            type="text"
+                            placeholder="Option one"
+                            onChange={handleOptionOneChange}
+                            className="create-form-control"
+                        />
+                    </div>
+                    <div className="" id="optionTwo">
+                        <p className='sub-title'>Second Option</p>
+                        <input
+                            type="text"
+                            placeholder="Option two"
+                            onChange={handleOptionTwoChange}
+                            className="create-form-control"
+                        />
+                    </div>
+                    <button disabled={isDisabledSubmit} onClick={handleCreatePoll} className='create-form-btn'>Create</button>
                 </div>
-                <div className="login-input" id="optionTwo">
-                    <p>Second Option</p>
-                    <input
-                        type="text"
-                        placeholder="Option two"
-                        onChange={handleOptionTwoChange}
-                        className="form-control"
-                    />
-                </div>
-                <button disabled={isDisabledSubmit} onClick={handleCreatePoll} className='login-form-btn'>Submit</button>
             </div>
         </div>
     );

@@ -194,7 +194,7 @@ head, body {
 }
 
 .form-control {
-  height: 50px;
+  height: 45px;
   width: 400px;
   margin: 12px;
   padding: 8px;
@@ -209,7 +209,7 @@ head, body {
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 10px;
-  background-color: #000000;
+  background-color: #0f5dabf9;
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -332,4 +332,65 @@ td {
 
 tr:nth-child(even) {
   background-color: #7bb3eb2b;
+}
+
+/* Create poll */
+.create-poll-body {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.sub-title {
+  margin: 8px;
+  color: #021b3c;
+}
+.create-form {
+  width: 30%;
+}
+
+.create-form-btn {
+  width: 30%;
+  height: 45px;
+  margin: 24px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  background-color: #0f5dabf9;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+}
+
+.create-form-btn:hover {
+  background-color: #0f5dab96;
+}
+
+.create-form-btn:active {
+  background-color: #083a6bcb;
+}
+
+.create-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 30px;
+  min-width: 400px;
+}
+
+.create-form-control {
+  height: 45px;
+  width: 380px;
+  margin: 12px;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: medium;
+}
+
+.create-poll-logo {
+  height: 150px;
+  width: auto;
+  margin: 12px;
 }
