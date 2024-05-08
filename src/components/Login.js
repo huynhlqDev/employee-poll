@@ -53,7 +53,7 @@ const Login = () => {
             <div className='login-body'>
                 <h1 className='login-title'>Employee Polls</h1>
                 <img className='login-logo'
-                    src="./login-logo-2.png"
+                    src="./auth-user.png"
                     alt={"logo"}
                 />
                 <div className='login-form'>
