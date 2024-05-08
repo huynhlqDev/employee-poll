@@ -345,10 +345,6 @@ tr:nth-child(even) {
   margin: 8px;
   color: #021b3c;
 }
-.create-form {
-  width: 30%;
-}
-
 .create-form-btn {
   width: 30%;
   height: 45px;
@@ -377,7 +373,7 @@ tr:nth-child(even) {
   justify-content: flex-start;
   align-items: center;
   margin-top: 30px;
-  min-width: 400px;
+  min-width: 800px;
 }
 
 .create-form-control {
