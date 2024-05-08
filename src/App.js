@@ -24,7 +24,7 @@ function App() {
           <Route path="/login" element={isLoggedIn ? <Navigate to="/poll-list" /> : <Login />}></Route>
           <Route path="/poll-list" element={isLoggedIn ? <PollList /> : <Navigate to="/login" />}></Route>
           <Route path="/add" element={isLoggedIn ? <CreatePoll /> : <Navigate to="/login" />}></Route>
-          <Route path="/answer-poll/:id" element={isLoggedIn ? <AnswerPoll /> : <Navigate to="/login" />}></Route>
+          <Route path="/questions/:id" element={isLoggedIn ? <AnswerPoll /> : <Navigate to="/login" />}></Route>
           <Route path="/leaderboard" element={isLoggedIn ? <Leaderboard /> : <Navigate to="/login" />}></Route>
         </Routes>
       </div>
