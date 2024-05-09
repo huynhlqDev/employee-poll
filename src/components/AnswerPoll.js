@@ -11,6 +11,7 @@ const AnswerPoll = () => {
 
     const { id } = useParams();
     const [voted, setVoted] = useState(false);
+    const [userVote, setUserVote] = useState(null);
     const [currentPoll, setCurrentPoll] = useState(null);
     const [optionPercentage, setOptionPercentage] = useState(null);
 
@@ -24,12 +25,14 @@ const AnswerPoll = () => {
 
                 for (let i = 0; i < votes1.length; i++) {
                     if (votes1[i] === user.id) {
+                        setUserVote("option one")
                         setVoted(true)
                         break;
                     }
                 }
                 for (let i = 0; i < votes2.length; i++) {
                     if (votes2[i] === user.id) {
+                        setUserVote("option two")
                         setVoted(true)
                         break;
                     }
@@ -79,25 +82,32 @@ const AnswerPoll = () => {
         <div className='create-poll-body'>
             <div className='polls-section'>
                 <h3 className='polls-section-title'>Poll by {currentPoll?.author}</h3>
-                <div className='poll-result'>
-                    <div
-                        className='option-one-area'
-                        style={paragraphStyleOptionOne}
-                    >{optionPercentage?.percentageOptionOne}%</div>
-                    <div
-                        className='option-two-area'
-                        style={paragraphStyleOptionTwo}
-                    >{optionPercentage?.percentageOptionTwo}%</div>
-                </div>
-                <p className='sub-title'>Would You Rather</p>
+                {voted ?
+                    <div className='poll-result'>
+                        <div
+                            className='option-one-area'
+                            style={paragraphStyleOptionOne}
+                        >{optionPercentage?.percentageOptionOne}%</div>
+                        <div
+                            className='option-two-area'
+                            style={paragraphStyleOptionTwo}
+                        >{optionPercentage?.percentageOptionTwo}%</div>
+                    </div>
+                    :
+                    <img className='create-poll-logo'
+                        src={user.avatarURL || "../create_poll.png"}
+                        alt={"avatar"}
+                    />
+                }
+                <p className='sub-title'>{voted ? `You have chosen: ${userVote}`: "Would You Rather"}</p>
                 <div className='answer-poll'>
                     <div className='answer-poll-option'>
                         <p className='question-title'>{currentPoll?.optionOne?.text}</p>
                         <button
-                         disabled={voted}
-                          onClick={() => { handleAnswerPoll('optionOne') }}
-                           className='vote-btn option-one-btn'
-                           >{voted ? `votes: ${currentPoll?.optionOne?.votes?.length}` : "Click"}</button>
+                            disabled={voted}
+                            onClick={() => { handleAnswerPoll('optionOne') }}
+                            className='vote-btn option-one-btn'
+                        >{voted ? `votes: ${currentPoll?.optionOne?.votes?.length}` : "Click"}</button>
                     </div>
                     <div className='answer-poll-option'>
                         <p className='question-title'>{currentPoll?.optionTwo?.text}</p>

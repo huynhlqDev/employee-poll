@@ -334,6 +334,26 @@ tr:nth-child(even) {
   background-color: #7bb3eb2b;
 }
 
+.leaderboard-card-avatar {
+  width: 40px;
+  height: 40px;
+  margin: 4px;
+}
+
+.leaderboard-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  margin: 4px;
+}
+
+.leaderboard-card-title {
+  margin: 0;
+  padding: auto;
+  font-size: large;
+  font-weight: bold;
+}
+
 /* Create poll */
 .create-poll-body {
   display: flex;
@@ -483,3 +503,4 @@ tr:nth-child(even) {
 .option-two-btn:hover {
   background-color: #03ac199b;
 }
+

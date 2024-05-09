@@ -23,6 +23,8 @@ const Leaderboard = () => {
         return userResponse && userResponse
             .map(user => ({
                 id: user.id,
+                name: user.name,
+                avatar: user.avatarURL,
                 answersCount: Object.keys(user.answers).length,
                 questionsCount: user.questions.length
             }))
@@ -46,7 +48,18 @@ const Leaderboard = () => {
                 <tbody>
                     {leadersboard.map(leader => (
                         <tr key={leader.id}>
-                            <td>{leader.id}</td>
+                            <td>
+                                <div className='leaderboard-card'>
+                                    <img className='leaderboard-card-avatar'
+                                        src={leader.avatar || "./auth-user.png"}
+                                        alt={"logo"}
+                                    />
+                                    <div style={{display: "flex", flexDirection: "column", marginLeft: "20px"}}>
+                                        <p className='leaderboard-card-title'>{leader.name}</p>
+                                        <p className='sub-title'>{leader.id}</p>
+                                    </div>
+                                </div>
+                            </td>
                             <td>{leader.answersCount}</td>
                             <td>{leader.questionsCount}</td>
                         </tr>
