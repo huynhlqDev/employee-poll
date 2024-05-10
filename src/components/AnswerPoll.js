@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { answerPoll } from '../actions/pollActions';
+import PageNotFound from './PageNotFound';
 
 const AnswerPoll = () => {
     const dispatch = useDispatch();
@@ -78,7 +79,7 @@ const AnswerPoll = () => {
         width: optionPercentage?.percentageOptionTwo + "%",
     };
 
-    return (currentPoll &&
+    return (currentPoll ?
         <div className='create-poll-body'>
             <div className='polls-section'>
                 <h3 className='polls-section-title'>Poll by {currentPoll?.author}</h3>
@@ -120,6 +121,8 @@ const AnswerPoll = () => {
                 </div>
             </div>
         </div>
+        :
+        <PageNotFound />
     );
 };
 
