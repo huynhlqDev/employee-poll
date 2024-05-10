@@ -52,7 +52,7 @@ const Leaderboard = () => {
                                 <div className='leaderboard-card'>
                                     <img className='leaderboard-card-avatar'
                                         src={leader.avatar || "./auth-user.png"}
-                                        alt={"logo"}
+                                        alt={"avatar"}
                                     />
                                     <div style={{display: "flex", flexDirection: "column", marginLeft: "20px"}}>
                                         <p className='leaderboard-card-title'>{leader.name}</p>
