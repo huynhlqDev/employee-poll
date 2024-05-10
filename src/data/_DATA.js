@@ -138,6 +138,18 @@ export function _getUsers () {
   })
 }
 
+export function _getUser(userId, password) {
+  const user = Object.values(users).find(user => user.id === userId);
+  if (user && user.password === password) {
+    return new Promise((resolve) => {
+      setTimeout(() => resolve(user), 1000)
+    })
+  } else {
+    return Promise.reject("User not found");
+  }
+  
+}
+
 export function _getQuestions () {
   return new Promise((resolve) => {
     setTimeout(() => resolve({...questions}), 1000)

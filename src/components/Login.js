@@ -1,18 +1,33 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect, useState, useRef } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../actions/authenActions';
 
 const Login = () => {
+    const isLoading = useSelector(state => state.loading.isLoading);
 
     const dispatch = useDispatch()
     const [isDisabledSubmit, setIsDisabledSubmit] = useState(true)
     const [loginInfo, setLoginInfo] = useState({ username: "", password: "" })
+    const errorLogin = useSelector(state => state.auth.error)
+
+    const usernameInput = useRef(null);
+    const passwordInput = useRef(null);
+
+    useEffect(() => {
+        // usernameInput.current.focus()
+    }, [])
+
+    useEffect(() => {
+        if (errorLogin) {
+            alert(errorLogin)
+        }
+    }, [errorLogin])
 
     useEffect(() => {
         setIsDisabledSubmit(
             loginInfo.username === "" || loginInfo.password === ""
         )
-    },[loginInfo])
+    }, [loginInfo])
 
     const handleUsernameChange = (e) => {
         setLoginInfo({
@@ -28,35 +43,42 @@ const Login = () => {
         });
     };
 
+
     const handleOnSubmit = () => {
         dispatch(login(loginInfo.username, loginInfo.password))
     }
 
-    return (
-        <div>
-            <h1>Employee Polls</h1>
-            <img
-                src="./login-logo.jpeg"
-                alt={"logo"}
-            />
-            <div>
-                <div className="login-input" id="username">
-                    <input
-                        type="text"
-                        placeholder="Username"
-                        onChange={handleUsernameChange}
-                        className="form-control"
-                    />
+    return (!isLoading &&
+        <div className='login'>
+            <div className='login-body'>
+                <h1 className='login-title'>Employee Polls</h1>
+                <img className='login-logo'
+                    src="./auth-user.png"
+                    alt={"logo"}
+                />
+                <div className='login-form'>
+                    <div className="login-input">
+                        <input
+                            id='username'
+                            ref={usernameInput}
+                            type="text"
+                            placeholder="Username"
+                            onChange={handleUsernameChange}
+                            className="form-control"
+                        />
+                    </div>
+                    <div className="login-input">
+                        <input
+                            id='password'
+                            ref={passwordInput}
+                            type="password"
+                            placeholder="Password"
+                            onChange={handlePasswordChange}
+                            className="form-control"
+                        />
+                    </div>
+                    <button disabled={isDisabledSubmit} onClick={handleOnSubmit} className='login-form-btn'>Sign in</button>
                 </div>
-                <div className="login-input" id="password">
-                    <input
-                        type="text"
-                        placeholder="Password"
-                        onChange={handlePasswordChange}
-                        className="form-control"
-                    />
-                </div>
-                <button disabled={isDisabledSubmit} onClick={handleOnSubmit} className='form-submit-btn'>Submit</button>
             </div>
         </div>
     )

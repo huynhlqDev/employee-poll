@@ -3,18 +3,17 @@ const initialState = {
 };
 
 const pollReducer = (state = initialState, action) => {
+
     switch (action.type) {
-        case 'CREATE_POLL':
+        case 'FETCH_ALL_POLLS':
             return {
                 ...state,
-                polls: [...state.polls, action.payload]
+                polls: action.payload
             };
-        case 'GET_POLLS':
-            // Logic để lấy danh sách bài thăm dò từ server
-            return state;
         default:
             return state;
     }
+
 };
 
 export default pollReducer;
