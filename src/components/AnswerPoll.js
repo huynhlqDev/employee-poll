@@ -3,12 +3,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { answerPoll } from '../actions/pollActions';
 import PageNotFound from './PageNotFound';
+import IndicatorLoading from './IndicatorLoading';
 
 const AnswerPoll = () => {
     const dispatch = useDispatch();
-    const isLoading = useSelector(state => state.loading.isLoading);
-    const user = useSelector(state => state.auth.user);
-    const polls = useSelector(state => state.poll.polls);
+    const isLoading = useSelector(state => state.updatePoll.loading);
+    const user = useSelector(state => state.user.user);
+    const polls = useSelector(state => state.polls.polls);
 
     const { id } = useParams();
     const [voted, setVoted] = useState(false);
@@ -78,6 +79,9 @@ const AnswerPoll = () => {
     const paragraphStyleOptionTwo = {
         width: optionPercentage?.percentageOptionTwo + "%",
     };
+    if (isLoading) {
+        return <IndicatorLoading />
+    }
 
     return (currentPoll ?
         <div className='create-poll-body'>

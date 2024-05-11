@@ -1,14 +1,15 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../actions/authenActions';
+import IndicatorLoading from '../components/IndicatorLoading';
 
 const Login = () => {
-    const isLoading = useSelector(state => state.loading.isLoading);
+    const isLoading = useSelector(state => state.user.loading);
 
     const dispatch = useDispatch()
     const [isDisabledSubmit, setIsDisabledSubmit] = useState(true)
     const [loginInfo, setLoginInfo] = useState({ username: "", password: "" })
-    const errorLogin = useSelector(state => state.auth.error)
+    const errorLogin = useSelector(state => state.user.error)
 
     const usernameInput = useRef(null);
     const passwordInput = useRef(null);
@@ -48,7 +49,8 @@ const Login = () => {
         dispatch(login(loginInfo.username, loginInfo.password))
     }
 
-    return (!isLoading &&
+    return (isLoading ? <IndicatorLoading /> 
+        :
         <div className='login'>
             <div className='login-body'>
                 <h1 className='login-title'>Employee Polls</h1>

@@ -7,13 +7,12 @@ import CreatePoll from './components/CreatePoll';
 import AnswerPoll from './components/AnswerPoll';
 import Leaderboard from './components/Leaderboard';
 import Header from './components/Header';
-import IndicatorLoading from './components/IndicatorLoading';
 import PageNotFound from './components/PageNotFound';
 import { _getRedirecPath, _saveRedirecPath } from './data/existingUsers';
 
 function App() {
 
-  const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
+  const isLoggedIn = useSelector(state => state.user.isLoggedIn);
 
   const handleBeforeLogin = () => {
     const currentPath = window.location.pathname;
@@ -38,7 +37,6 @@ function App() {
     <Router>
       <Header />
       <div>
-        <IndicatorLoading />
         <Routes>
           <Route path="/" exact element={isLoggedIn ? <Navigate to="/poll-list" /> : <Login />}></Route>
           <Route path="/login" element={isLoggedIn ? <Navigate to={handleAfterLogin()} /> : <Login />}></Route>

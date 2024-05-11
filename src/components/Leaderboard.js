@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUsers } from '../actions/userActions';
+import IndicatorLoading from './IndicatorLoading';
 
 const Leaderboard = () => {
     const dispatch = useDispatch();
-    const isLoading = useSelector(state => state.loading.isLoading);
+    const isLoading = useSelector(state => state.users.loading);
     const userResponse = useSelector(state => state.users.users);
 
     const [leadersboard, setLeadersboard] = useState([]);
@@ -34,7 +35,7 @@ const Leaderboard = () => {
     };
 
 
-    return (!isLoading &&
+    return (isLoading ? <IndicatorLoading /> :
         <div className='polls-section'>
             <h3 className='polls-section-title'>Leaderboard</h3>
             <table>

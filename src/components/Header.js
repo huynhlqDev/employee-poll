@@ -8,8 +8,8 @@ import { useEffect, useState } from 'react';
 const Header = () => {
 
     const dispatch = useDispatch();
-    const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
-    const user = useSelector(state => state.auth.user);
+    const isLoggedIn = useSelector(state => state.user.isLoggedIn);
+    const user = useSelector(state => state.user.user);
 
     const [existingUsers, setExistingUsers] = useState(_getExistingUsers());
     const [showUserDropdown, setShowUserDropdown] = useState(false)

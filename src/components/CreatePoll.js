@@ -1,14 +1,15 @@
 
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
-import { createPoll, clearState } from '../actions/createPollActions';
+import { savePoll, clearState } from '../actions/createPollActions';
 import { Navigate } from 'react-router-dom';
+import IndicatorLoading from './IndicatorLoading';
 
 
 const CreatePoll = () => {
     const dispatch = useDispatch();
-    const userId = useSelector(state => state.auth.user.id);
-    const createPollStatus = useSelector(state => state.createPoll);
+    const userId = useSelector(state => state.user.user.id);
+    const createPoll = useSelector(state => state.createPoll);
 
     const [isDisabledSubmit, setIsDisabledSubmit] = useState(true)
     const [questionInfo, setQuestionInfo] = useState({ optionOneText: "", optionTwoText: "" });
@@ -16,18 +17,18 @@ const CreatePoll = () => {
 
     useEffect(() => {
 
-        if (createPollStatus.status) {
+        if (createPoll.result) {
             window.alert("Create success!")
             setFinish(true);
             const clearData = () => {
                 dispatch(clearState())
             }
             return clearData
-        } else if (createPollStatus.error) {
-            console.log("create failed, error: ", createPollStatus.error);
+        } else if (createPoll.error) {
+            console.log("create failed, error: ", createPoll.error);
         }
 
-    }, [createPollStatus, dispatch])
+    }, [createPoll, dispatch])
 
     useEffect(() => {
         setIsDisabledSubmit(
@@ -50,10 +51,14 @@ const CreatePoll = () => {
     };
 
     const handleCreatePoll = () => {
-        dispatch(createPoll(userId, questionInfo.optionOneText, questionInfo.optionTwoText));
+        dispatch(savePoll(userId, questionInfo.optionOneText, questionInfo.optionTwoText));
     };
+    
+    if (finish) {
+        return <Navigate to="/poll-list" /> ;
+    }
 
-    return (finish ? <Navigate to="/poll-list" /> :
+    return ( createPoll.loading ? <IndicatorLoading /> :
         <div className='create-poll-body'>
             <div className='polls-section '>
                 <h3 className='polls-section-title'>Would You Rather</h3>
