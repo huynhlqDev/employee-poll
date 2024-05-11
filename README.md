@@ -37,19 +37,24 @@ This project is a web application that allows users to create and respond to sur
 
 To run tests in the project, you can use the following command:
 
-```bash
-npm test
-```
+    ```bash
+    npm test
+    ```
+- If no tests are found related to files changed since the last commit, you can run all tests using the following options:
 
-In watch mode, you can use the following shortcuts:
+    ```bash
+    No tests found related to files changed since last commit.
+    Press `a` to run all tests, or run Jest with `--watchAll`.
 
-```bash
-a: Run all tests.
-f: Run only failed tests.
-q: Quit watch mode.
-p: Filter tests by a filename regex pattern.
-t: Filter tests by a test name regex pattern.
-```
+    Watch Usage
+     › Press a to run all tests.
+     › Press f to run only failed tests.
+     › Press q to quit watch mode.
+     › Press p to filter by a filename regex pattern.
+     › Press t to filter by a test name regex pattern.
+     › Press Enter to trigger a test run.
+
+    ```
 - For more information on using Jest in watch mode, please refer to the Jest documentation.
 
 ## Technologies Used
