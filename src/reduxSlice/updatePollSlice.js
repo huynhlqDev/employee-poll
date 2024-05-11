@@ -13,7 +13,7 @@ export const updatePollSlice = createSlice({
         },
         updatePollSuccess: (state, action) => {
             state.loading = false;
-            state.result = true;
+            state.result = action.result;
             state.error = false;
         },
         updatePollError: (state, action) => {
