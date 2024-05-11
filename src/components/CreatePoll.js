@@ -53,12 +53,12 @@ const CreatePoll = () => {
     const handleCreatePoll = () => {
         dispatch(savePoll(userId, questionInfo.optionOneText, questionInfo.optionTwoText));
     };
-    
+
     if (finish) {
-        return <Navigate to="/poll-list" /> ;
+        return <Navigate to="/poll-list" />;
     }
 
-    return ( createPoll.loading ? <IndicatorLoading /> :
+    return (createPoll.loading ? <IndicatorLoading /> :
         <div className='create-poll-body'>
             <div className='polls-section '>
                 <h3 className='polls-section-title'>Would You Rather</h3>

@@ -104,7 +104,7 @@ const AnswerPoll = () => {
                         alt={"avatar"}
                     />
                 }
-                <p className='sub-title'>{voted ? `You have chosen: ${userVote}`: "Would You Rather"}</p>
+                <p className='sub-title'>{voted ? `You have chosen: ${userVote}` : "Would You Rather"}</p>
                 <div className='answer-poll'>
                     <div className='answer-poll-option'>
                         <p className='question-title'>{currentPoll?.optionOne?.text}</p>

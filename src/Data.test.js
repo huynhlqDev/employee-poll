@@ -1,7 +1,8 @@
 import {
     _getUser,
     _saveQuestion,
-    _saveQuestionAnswer } from "./data/_DATA";
+    _saveQuestionAnswer
+} from "./data/_DATA";
 
 // Test: _getUser funtion
 describe("_getUser", () => {

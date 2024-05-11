@@ -49,7 +49,7 @@ const Login = () => {
         dispatch(login(loginInfo.username, loginInfo.password))
     }
 
-    return (isLoading ? <IndicatorLoading /> 
+    return (isLoading ? <IndicatorLoading />
         :
         <div className='login'>
             <div className='login-body'>

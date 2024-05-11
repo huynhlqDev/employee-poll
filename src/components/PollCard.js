@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
 const PollCard = ({ poll }) => {
-    
+
     const convertTimestampToDateTime = (timestamp) => {
         const dateObject = new Date(timestamp);
-        const dateTimeString = dateObject.toLocaleString(); 
+        const dateTimeString = dateObject.toLocaleString();
         return dateTimeString;
     }
 

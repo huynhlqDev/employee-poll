@@ -28,7 +28,7 @@ const PollList = () => {
     }
 
 
-    return ( isLoading ? <IndicatorLoading /> :
+    return (isLoading ? <IndicatorLoading /> :
         <div className='polls'>
             <div className='polls-section'>
                 <h3 className='polls-section-title'>New Questions</h3>

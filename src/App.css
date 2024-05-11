@@ -2,7 +2,8 @@
   box-sizing: border-box;
 }
 
-head, body {
+head,
+body {
   background-color: #eff5fff1;
 }
 
@@ -312,11 +313,14 @@ table {
   width: 100%;
 }
 
-table, th, td {
+table,
+th,
+td {
   border: 1px solid black;
 }
 
-th, td {
+th,
+td {
   padding: 8px;
 }
 
@@ -366,6 +370,7 @@ tr:nth-child(even) {
   margin: 8px;
   color: #021b3c;
 }
+
 .create-form-btn {
   width: 30%;
   height: 45px;
@@ -503,4 +508,3 @@ tr:nth-child(even) {
 .option-two-btn:hover {
   background-color: #03ac199b;
 }
-

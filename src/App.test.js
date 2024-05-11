@@ -19,33 +19,33 @@ describe('Test DOM component', () => {
         <App />
       </Provider>
     );
-  
+
     // verify snapshot
     expect(app).toMatchSnapshot();
-  
+
     // verify DOM component
     const loginTitle = screen.getByText(/Employee Polls/);
     const submitButton = screen.getByText(/Sign in/);
     const usernameInput = screen.getByPlaceholderText(/Username/);
     const passwordInput = screen.getByPlaceholderText(/Password/);
-  
+
     expect(loginTitle).toBeInTheDocument();
     expect(submitButton).toBeInTheDocument();
     expect(usernameInput).toBeInTheDocument();
     expect(passwordInput).toBeInTheDocument();
-  
+
     // DOM fire event
     fireEvent.change(usernameInput, { target: { value: 'zoshikanlu' } });
     fireEvent.change(passwordInput, { target: { value: 'pass246' } });
     fireEvent.click(submitButton);
-    
+
     // Confirm hiding the login page when submitted successfully
     expect(loginTitle).not.toBeInTheDocument();
     expect(usernameInput).not.toBeInTheDocument();
     expect(passwordInput).not.toBeInTheDocument();
     expect(submitButton).not.toBeInTheDocument();
   })
-  
+
 });
 
 // Test: component snapshot
