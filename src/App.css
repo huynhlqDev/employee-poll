@@ -508,3 +508,25 @@ tr:nth-child(even) {
 .option-two-btn:hover {
   background-color: #03ac199b;
 }
+
+/* Toggle switch poll list */
+/* 2 */
+.radio-button-container {
+  display: flex;
+}
+
+.radio-button {
+  appearance: none;
+  border: 3px solid transparent;
+  background-color: transparent;
+  padding: 8px 16px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: border-color 0.3s;
+  border-radius: 6px;
+  background-color: #e3f2fa;
+}
+
+.radio-button.checked {
+  border-color: #13b253;
+}
