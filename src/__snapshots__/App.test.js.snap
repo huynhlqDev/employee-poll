@@ -223,6 +223,13 @@ Object {
   "queryByText": [Function],
   "queryByTitle": [Function],
   "rerender": [Function],
+  "store": Object {
+    "@@observable": [Function],
+    "dispatch": [Function],
+    "getState": [Function],
+    "replaceReducer": [Function],
+    "subscribe": [Function],
+  },
   "unmount": [Function],
 }
 `;
@@ -296,6 +303,13 @@ Object {
   "queryByText": [Function],
   "queryByTitle": [Function],
   "rerender": [Function],
+  "store": Object {
+    "@@observable": [Function],
+    "dispatch": [Function],
+    "getState": [Function],
+    "replaceReducer": [Function],
+    "subscribe": [Function],
+  },
   "unmount": [Function],
 }
 `;
@@ -485,6 +499,14 @@ Object {
   "queryByText": [Function],
   "queryByTitle": [Function],
   "rerender": [Function],
+  "store": Object {
+    "clearActions": [Function],
+    "dispatch": [Function],
+    "getActions": [Function],
+    "getState": [Function],
+    "replaceReducer": [Function],
+    "subscribe": [Function],
+  },
   "unmount": [Function],
 }
 `;
@@ -500,23 +522,20 @@ Object {
         <div
           class="polls-section"
         >
-          <h3
-            class="polls-section-title"
-          >
-            New Questions
-          </h3>
           <div
-            class="polls-section-body"
-          />
-        </div>
-        <div
-          class="polls-section"
-        >
-          <h3
-            class="polls-section-title"
+            class="radio-button-container"
           >
-            Done
-          </h3>
+            <button
+              class="polls-section-title radio-button checked"
+            >
+              New
+            </button>
+            <button
+              class="polls-section-title radio-button "
+            >
+              Done
+            </button>
+          </div>
           <div
             class="polls-section-body"
           />
@@ -531,23 +550,20 @@ Object {
       <div
         class="polls-section"
       >
-        <h3
-          class="polls-section-title"
-        >
-          New Questions
-        </h3>
         <div
-          class="polls-section-body"
-        />
-      </div>
-      <div
-        class="polls-section"
-      >
-        <h3
-          class="polls-section-title"
+          class="radio-button-container"
         >
-          Done
-        </h3>
+          <button
+            class="polls-section-title radio-button checked"
+          >
+            New
+          </button>
+          <button
+            class="polls-section-title radio-button "
+          >
+            Done
+          </button>
+        </div>
         <div
           class="polls-section-body"
         />
@@ -604,6 +620,14 @@ Object {
   "queryByText": [Function],
   "queryByTitle": [Function],
   "rerender": [Function],
+  "store": Object {
+    "clearActions": [Function],
+    "dispatch": [Function],
+    "getActions": [Function],
+    "getState": [Function],
+    "replaceReducer": [Function],
+    "subscribe": [Function],
+  },
   "unmount": [Function],
 }
 `;
@@ -612,9 +636,25 @@ exports[`matches the snapshot when render component Login 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
-    <div />
+    <div>
+      <div
+        class="overlay disable-interaction"
+      >
+        <div
+          class="spinner"
+        />
+      </div>
+    </div>
   </body>,
-  "container": <div />,
+  "container": <div>
+    <div
+      class="overlay disable-interaction"
+    >
+      <div
+        class="spinner"
+      />
+    </div>
+  </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
   "findAllByDisplayValue": [Function],
@@ -665,6 +705,13 @@ Object {
   "queryByText": [Function],
   "queryByTitle": [Function],
   "rerender": [Function],
+  "store": Object {
+    "@@observable": [Function],
+    "dispatch": [Function],
+    "getState": [Function],
+    "replaceReducer": [Function],
+    "subscribe": [Function],
+  },
   "unmount": [Function],
 }
 `;
@@ -673,9 +720,25 @@ exports[`matches the snapshot when render component leadersboard 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
-    <div />
+    <div>
+      <div
+        class="overlay disable-interaction"
+      >
+        <div
+          class="spinner"
+        />
+      </div>
+    </div>
   </body>,
-  "container": <div />,
+  "container": <div>
+    <div
+      class="overlay disable-interaction"
+    >
+      <div
+        class="spinner"
+      />
+    </div>
+  </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
   "findAllByDisplayValue": [Function],
@@ -726,6 +789,13 @@ Object {
   "queryByText": [Function],
   "queryByTitle": [Function],
   "rerender": [Function],
+  "store": Object {
+    "@@observable": [Function],
+    "dispatch": [Function],
+    "getState": [Function],
+    "replaceReducer": [Function],
+    "subscribe": [Function],
+  },
   "unmount": [Function],
 }
 `;

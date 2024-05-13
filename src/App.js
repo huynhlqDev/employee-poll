@@ -16,7 +16,6 @@ function App() {
 
   const handleBeforeLogin = () => {
     const currentPath = window.location.pathname;
-    _saveRedirecPath(currentPath);
     if (currentPath.includes("/questions")) {
       _saveRedirecPath(currentPath);
     }

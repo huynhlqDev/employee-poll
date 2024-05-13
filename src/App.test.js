@@ -1,10 +1,10 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 import { thunk } from 'redux-thunk';
+import { renderWithProviders } from "./setupTests";
 
-import App from './App';
 import store from './store';
+import App from './App';
 import Login from './components/Login';
 import PollList from './components/PollList';
 import Leaderboard from './components/Leaderboard';
@@ -14,11 +14,7 @@ import AnswerPoll from './components/AnswerPoll';
 // Test DOM component
 describe('Test DOM component', () => {
   it("DOM test which uses the fireEvent function", () => {
-    var app = render(
-      <Provider store={store}>
-        <App />
-      </Provider>
-    );
+    var app = renderWithProviders(<App />, store);
 
     // verify snapshot
     expect(app).toMatchSnapshot();
@@ -52,26 +48,19 @@ describe('Test DOM component', () => {
 describe("matches the snapshot when render component", () => {
   //Test: Login component
   it("Login", () => {
-    var component = render(
-      <Provider store={store}>
-        <Login />
-      </Provider>
-    );
-
-    expect(component).toMatchSnapshot();
+    var login = renderWithProviders(<Login />, store);
+    expect(login).toMatchSnapshot();
   })
 
   //Test: PollList component
   it("Home", () => {
     const mockStore = configureMockStore([thunk]);
     const initialState = {
-      poll: {
-        polls: []
+      polls: {
+        polls: [],
+        loading: false
       },
-      loading: {
-        isLoading: false
-      },
-      auth: {
+      user: {
         user: {
           answers: {}
         }
@@ -79,13 +68,9 @@ describe("matches the snapshot when render component", () => {
     };
 
     const store = mockStore(initialState);
-    var component = render(
-      <Provider store={store}>
-        <PollList />
-      </Provider>
-    );
+    var pollList = renderWithProviders(<PollList />, store);
 
-    expect(component).toMatchSnapshot();
+    expect(pollList).toMatchSnapshot();
   })
 
 
@@ -93,7 +78,7 @@ describe("matches the snapshot when render component", () => {
   it("Create poll", () => {
     const mockStore = configureMockStore([thunk]);
     const initialState = {
-      auth: {
+      user: {
         isLoggedIn: false,
         user: { id: "", password: "" }
       },
@@ -101,12 +86,9 @@ describe("matches the snapshot when render component", () => {
         createPoll: false
       }
     };
+
     const store = mockStore(initialState);
-    var component = render(
-      <Provider store={store}>
-        <CreatePoll />
-      </Provider>
-    );
+    var component = renderWithProviders(<CreatePoll />, store);
 
     expect(component).toMatchSnapshot();
   })
@@ -114,11 +96,7 @@ describe("matches the snapshot when render component", () => {
 
   //Test: AnswerPoll component
   it("Answer poll", () => {
-    var component = render(
-      <Provider store={store}>
-        <AnswerPoll />
-      </Provider>
-    );
+    var component = renderWithProviders(<AnswerPoll />, store);
 
     expect(component).toMatchSnapshot();
   })
@@ -126,11 +104,8 @@ describe("matches the snapshot when render component", () => {
 
   //Test: Leadersboard component
   it("leadersboard", () => {
-    var component = render(
-      <Provider store={store}>
-        <Leaderboard />
-      </Provider>
-    );
+    var component = renderWithProviders(
+      <Leaderboard />, store);
 
     expect(component).toMatchSnapshot();
   })
