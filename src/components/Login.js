@@ -2,9 +2,13 @@ import React, { useEffect, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../actions/authenActions';
 import IndicatorLoading from '../components/IndicatorLoading';
+import { useNavigate } from 'react-router-dom';
+import { _getRedirecPath } from '../data/existingUsers';
 
 const Login = () => {
+    const isLoggedIn = useSelector(state => state.user.isLoggedIn);
     const isLoading = useSelector(state => state.user.loading);
+    const navigate = useNavigate();
 
     const dispatch = useDispatch()
     const [isDisabledSubmit, setIsDisabledSubmit] = useState(true)
@@ -16,7 +20,15 @@ const Login = () => {
 
     useEffect(() => {
         // usernameInput.current.focus()
-    }, [])
+        if (isLoggedIn) {
+            const path = _getRedirecPath();
+            if (path === "/login") {
+                navigate("/poll-list")
+            } else {
+                navigate(path);
+            }
+        }
+    }, [isLoggedIn,navigate])
 
     useEffect(() => {
         if (errorLogin) {
